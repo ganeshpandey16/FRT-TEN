@@ -1,0 +1,290 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  /*background-image: url("background.jpg");*/
+  /* background-color: #181f44; */
+  background: linear-gradient(to bottom, rgb(45, 44, 44),rgb(54, 72, 80), rgb(45, 44, 44));
+}
+
+header {
+  height: 120px;
+  /*background-color: #333;*/
+  background-color: rgb(33, 32, 32);
+  /* background: linear-gradient(to right, #4CAF50, #2196F3); */
+  color: #fff;
+  padding: 10px;
+}
+
+.logo {
+  margin: 30px;
+  float: left;
+  border: 2px solid white;
+}
+
+.logo h1 {
+  font-size: 32px;
+}
+
+.nav-links {
+  margin: 30px;
+  float: right;
+  list-style: none;
+}
+
+.nav-links li {
+  border: 2px solid white;
+  padding: 2px;
+  
+  display: inline-block;
+  margin: 5px 10px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.nav-links a:hover {
+    width: 30px;
+  /* background-color: rgb(45, 110, 167); */
+}
+
+
+.middle-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1000px;
+  margin: 20px auto;
+}
+
+.box {
+  color: rgb(250, 248, 248);
+  text-align: center;
+  width: calc(33.33% - 20px);
+  height: 0;
+  padding-bottom: calc(33.33% - 20px);
+  /* 1:1 aspect ratio (square) */
+  left: 50px;
+   background-color: #0c2134; 
+  /* background: linear-gradient(to right, black, skyblue); */
+  margin: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.box:hover{
+  transition: .5s;
+}
+
+.box h2 {
+  font-size: 35px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.box p {
+  margin: 10px 0;
+}
+
+.box button {
+  margin-top: 20px;
+}
+
+.box button {
+  padding: 8px 12px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  position: relative;
+  top: 15px;
+}
+
+.custom-button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  /* Green background color */
+  color: white;
+  /* White text color */
+  border: none;
+  /* No border */
+  border-radius: 5px;
+  /* Rounded corners */
+  font-size: 16px;
+  /* Font size */
+  cursor: pointer;
+  /* Cursor on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Shadow effect */
+  transition: background-color 0.3s ease-in-out;
+  /* Smooth transition on hover */
+}
+
+.custom-button:hover {
+  background-color: #45a049;
+  /* Darker green on hover */
+}
+
+.custom-button:active {
+  transform: translateY(2px);
+  /* Button press effect */
+}
+
+footer {
+  background-color: rgb(33, 32, 32);
+}
+
+.footer {
+  width: 100%;
+  padding: 40px 30px 20px;
+}
+
+.social {
+  display: flex;
+  justify-content: center;
+}
+
+.social img {
+  width: 40px;
+}
+
+.social a {
+  text-decoration: none;
+  padding: 10px;
+  margin: 10px;
+
+}
+
+.footernav {
+  margin: 30px 0;
+}
+
+footer h1 {
+  color: white;
+  text-align: center;
+}
+
+.footernav ul {
+  display: flex;
+  justify-content: center;
+}
+
+.footernav ul li a {
+  color: white;
+  margin: 15px;
+  text-decoration: none;
+  font-size: 1.3em;
+  opacity: 0.7;
+  transition: .5s;
+}
+
+.footernav ul li a:hover {
+  opacity: 1;
+}
+
+.copy {
+  color: white;
+  background-color: rgb(33, 32, 32);
+  padding: 20px;
+  text-align: center;
+}
+
+/* Default styles that apply to all screen sizes */
+
+/* Styles for screens smaller than 768px (e.g., smartphones) */
+/* Default styles that apply to all screen sizes */
+
+/* Styles for screens smaller than 768px (e.g., smartphones) */
+@media (max-width: 767px) {
+  header {
+    height: auto;
+  }
+  
+  .logo {
+    margin: 15px;
+    float: none;
+    text-align: center;
+  }
+  
+  .nav-links {
+    float: none;
+    text-align: center;
+    margin: 0;
+  }
+  
+  .nav-links li {
+    display: block;
+    margin: 10px auto;
+  }
+  
+  .middle-section {
+    margin: 10px;
+  }
+  
+  .box {
+    width: 100%;
+    height: auto;
+    padding-bottom: 0;
+  }
+  
+  .box h2 {
+    font-size: 24px;
+  }
+  
+  .box button {
+    margin-top: 10px;
+  }
+  
+  .footer {
+    padding: 20px 15px;
+  }
+  
+  .footernav ul {
+    flex-direction: column;
+  }
+  
+  .footernav ul li {
+    text-align: center;
+    margin: 10px 0;
+  }
+  
+  .copy {
+    padding: 10px;
+  }
+}
+
+/* Styles for screens between 768px and 1023px (e.g., tablets) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .nav-links {
+    margin: 15px;
+  }
+  
+  .middle-section {
+    margin: 15px auto;
+  }
+  
+  .box {
+    width: calc(50% - 20px);
+    padding-bottom: calc(50% - 20px);
+  }
+  
+  .box h2 {
+    font-size: 28px;
+  }
+}
+
+/* Styles for screens larger than 1023px (e.g., desktops) */
+@media (min-width: 1024px) {
+  .middle-section {
+    margin: 20px auto;
+  }
+}
