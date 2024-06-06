@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Clickable and Centered Image</title>
+    <!-- <link rel="stylesheet" href="road.css"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/road.css') }}">
+    <style>
+        /* {{ url_for('static', filename='images/roadFrontEnd.png') }} */
+    </style>
+</head>
+<body>
+    {% include 'nav.html' %}
+    <div class="head">
+        <h1>PROGRAMMING LANGUAGES</h1>
+    </div>
+    <div class="grid">
+        <div class="box"><h1>WEB DEVELOPMENT</h1></a><img src="{{ url_for('static', filename='images/roadFrontEnd.png') }}" alt="" srcset=""></div>
+        <div class="box"><h1>AI</h1></a><img src="{{ url_for('static', filename='images/roadAI.jpg') }}" alt="" srcset=""></div>
+        <div class="box"><h1>IOT</h1></a><img src="{{ url_for('static', filename='images/roadIOT.jpg') }}" alt=""></div>
+        
+        
+    </div>
+    {% include 'footer.html' %}
+</body>
+</html>

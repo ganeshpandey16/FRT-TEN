@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEN</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .navbar {
+            background: #333;
+            color: #fff;
+            padding: 1em 0;
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .navbar .nav-links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .navbar .nav-links li {
+            margin-left: 1em;
+        }
+
+        .navbar .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1em;
+            transition: color 0.3s;
+        }
+
+        .navbar .nav-links a:hover {
+            color: #ff6347;
+        }
+
+        .main-content {
+            padding: 2em 0;
+            background: #f4f4f4;
+        }
+
+        .section {
+            background: #fff;
+            padding: 2em;
+            margin: 1em 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
+        }
+
+        .section:hover {
+            transform: scale(1.01);
+            background: #e9ecef;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .section h2 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        .section p {
+            color: #666;
+        }
+
+        .footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+        }
+
+        .footer p {
+            margin: 0;
+        }
+        a{
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    {% include 'nav.html' %}
+
+    <div class="main-content">
+        <div class="container">
+            <a href="index.html" >
+                <div class="section resources">
+                    <h2>Resources</h2>
+                    <p>Here you'll find a variety of resources to help you.</p>
+                </div>
+            </a>
+            <a href="/jobs">
+                <div class="section job">
+                    <h2>Job</h2>
+                    <p>Find your dream job here.</p>
+                </div>
+            </a>
+            <a href="/language">
+                <div class="section translate">
+                    <h2>Translate</h2>
+                    <p>End the language barrier here.</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    {% include 'footer.html' %}
+</body>
+</html>

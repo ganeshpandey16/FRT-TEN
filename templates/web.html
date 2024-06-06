@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Horizontal Boxes</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/web.css') }}">
+</head>
+<body>
+    {% include 'nav.html' %}
+    <div class="head">
+        <h1>WEB PROGRAMMING</h1>
+    </div>
+    <div class="grid">
+        <div class="box">
+            <a href="https://youtu.be/BsDoLVMnmZs"><h1>Html</h1></a>
+            <img src="{{ url_for('static', filename='images/html.png') }}" alt="">
+        </div>
+        <div class="box">
+            <a href="https://youtu.be/1Rs2ND1ryYc"><h1>Css</h1></a>
+            <img src="{{ url_for('static', filename='images/css.png') }}" alt="">
+        </div>
+        <div class="box">
+            <a href="https://youtube.com/playlist?list=PLu0W_9lII9ahR1blWXxgSlL4y9iQBnLpR"><h1>Java-Script</h1></a>
+            <img src="{{ url_for('static', filename='images/javascipt.png') }}" alt="">
+        </div>
+        <div class="box">
+            <a href="https://youtube.com/playlist?list=PLC3y8-rFHvwgg3vaYJgHGnModB54rxOk3"><h1>React-JS</h1></a>
+            <img src="{{ url_for('static', filename='images/react.png') }}" alt="">
+        </div>
+        <div class="box">
+            <a href="https://youtube.com/playlist?list=PLC3y8-rFHvwh8shCMHFA5kWxD9PaPwxaY"><h1>Node-JS</h1></a>
+            <img class="im" src="{{ url_for('static', filename='images/node.png') }}" alt="">
+        </div>
+        <div class="box">
+            <a href="https://youtu.be/HXV3zeQKqGY"><h1>SQL</h1></a>
+            <img src="{{ url_for('static', filename='images/sql.png') }}" alt="">
+        </div>
+    </div>
+    {% include 'footer.html' %}
+</body>
+</html>

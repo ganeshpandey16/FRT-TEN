@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Azure Translator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        textarea {
+            width: 100%;
+            max-width: 400px;
+        }
+        select, input[type="text"] {
+            width: 100%;
+            max-width: 400px;
+            padding: 5px;
+            margin: 10px 0;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #translation-result {
+            margin-top: 20px;
+            padding: 10px;
+            background: #e9ecef;
+            border-radius: 4px;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Translate Text</h1>
+        <form id="translate-form">
+            <label for="text">Text to translate:</label><br>
+            <textarea id="text" name="text" rows="4" cols="50"></textarea><br><br>
+            <label for="lang">Translate to:</label><br>
+            <select id="lang" name="lang">
+                <!-- Options will be dynamically generated here -->
+            </select><br><br>
+            <button type="button" onclick="translateText()">Translate</button>
+        </form>
+        <h2>Translation:</h2>
+        <div id="translation-result"></div>
+    </div>
+    
+    <script>
+        // Language codes and names
+        const languages = [
+            { code: 'af', name: 'Afrikaans' },
+            { code: 'ar', name: 'Arabic' },
+            { code: 'bn', name: 'Bengali' },
+            { code: 'bg', name: 'Bulgarian' },
+            { code: 'ca', name: 'Catalan' },
+            { code: 'zh-Hans', name: 'Chinese (Simplified)' },
+            { code: 'zh-Hant', name: 'Chinese (Traditional)' },
+            { code: 'hr', name: 'Croatian' },
+            { code: 'cs', name: 'Czech' },
+            { code: 'da', name: 'Danish' },
+            { code: 'nl', name: 'Dutch' },
+            { code: 'en', name: 'English' },
+            { code: 'et', name: 'Estonian' },
+            { code: 'fi', name: 'Finnish' },
+            { code: 'fr', name: 'French' },
+            { code: 'de', name: 'German' },
+            { code: 'el', name: 'Greek' },
+            { code: 'he', name: 'Hebrew' },
+            { code: 'hi', name: 'Hindi' },
+            { code: 'hu', name: 'Hungarian' },
+            { code: 'is', name: 'Icelandic' },
+            { code: 'id', name: 'Indonesian' },
+            { code: 'ga', name: 'Irish' },
+            { code: 'it', name: 'Italian' },
+            { code: 'ja', name: 'Japanese' },
+            { code: 'ko', name: 'Korean' },
+            { code: 'lv', name: 'Latvian' },
+            { code: 'lt', name: 'Lithuanian' },
+            { code: 'mk', name: 'Macedonian' },
+            { code: 'ms', name: 'Malay' },
+            { code: 'mt', name: 'Maltese' },
+            { code: 'no', name: 'Norwegian' },
+            { code: 'fa', name: 'Persian' },
+            { code: 'pl', name: 'Polish' },
+            { code: 'pt', name: 'Portuguese' },
+            { code: 'ro', name: 'Romanian' },
+            { code: 'ru', name: 'Russian' },
+            { code: 'sr', name: 'Serbian' },
+            { code: 'sk', name: 'Slovak' },
+            { code: 'sl', name: 'Slovenian' },
+            { code: 'es', name: 'Spanish' },
+            { code: 'sw', name: 'Swahili' },
+            { code: 'sv', name: 'Swedish' },
+            { code: 'th', name: 'Thai' },
+            { code: 'tr', name: 'Turkish' },
+            { code: 'uk', name: 'Ukrainian' },
+            { code: 'ur', name: 'Urdu' },
+            { code: 'vi', name: 'Vietnamese' },
+            { code: 'cy', name: 'Welsh' },
+            { code: 'yi', name: 'Yiddish' }
+            // Add more languages as needed
+        ];
+
+        // Function to dynamically generate dropdown options
+        function populateLanguages() {
+            const select = document.getElementById('lang');
+            languages.forEach(language => {
+                const option = document.createElement('option');
+                option.value = language.code;
+                option.textContent = language.name;
+                select.appendChild(option);
+            });
+        }
+
+        // Call the function to populate languages on page load
+        populateLanguages();
+
+        // Function to translate text
+        function translateText() {
+            const form = document.getElementById('translate-form');
+            const formData = new FormData(form);
+            fetch('/translate', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.translation) {
+                    document.getElementById('translation-result').innerText = data.translation;
+                } else {
+                    document.getElementById('translation-result').innerText = 'Error: ' + data.error;
+                }
+            })
+            .catch(error => {
+                document.getElementById('translation-result').innerText = 'Error: ' + error;
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    
+    background-color: white;
+  }
+  
+  .middle-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1000px;
+    margin: 20px auto;
+  }
+  
+  .box {
+    color: rgb(14, 14, 14);
+    text-align: center;
+    width: calc(33.33% - 20px);
+    height: 0;
+    padding-bottom: calc(33.33% - 20px);
+    /* 1:1 aspect ratio (square) */
+    left: 50px;
+     background-color: #f4f6f7; 
+    /* background: linear-gradient(to right, black, skyblue); */
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  .box:hover{
+    transition: .5s;
+  }
+  .c {
+    height: 220px;
+}
+  
+  .box h2 {
+    font-size: 35px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .box p {
+    margin: 10px 0;
+  }
+  
+  .box button {
+    margin-top: 20px;
+  }
+  
+  .box button {
+    padding: 8px 12px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    position: relative;
+    top: 0px;
+    bottom: 5px;
+  }
+  
+  .custom-button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    /* Green background color */
+    color: white;
+    /* White text color */
+    border: none;
+    /* No border */
+    border-radius: 5px;
+    /* Rounded corners */
+    font-size: 16px;
+    /* Font size */
+    cursor: pointer;
+    /* Cursor on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Shadow effect */
+    transition: background-color 0.3s ease-in-out;
+    /* Smooth transition on hover */
+  }
+  
+  .custom-button:hover {
+    background-color: #45a049;
+    /* Darker green on hover */
+  }
+  
+  .custom-button:active {
+    transform: translateY(2px);
+    /* Button press effect */
+  }
+  
+
+  /* Default styles that apply to all screen sizes */
+  
+  /* Styles for screens smaller than 768px (e.g., smartphones) */
+  @media (max-width: 767px) {
+    header {
+      height: 80px;
+    }
+  
+    .logo {
+      margin: 10px;
+    }
+  
+    .nav-links {
+      margin: 10px;
+      float: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .nav-links li {
+      margin: 10px 0;
+    }
+  
+    .middle-section {
+      justify-content: center;
+    }
+  
+    .box {
+      width: calc(50% - 20px);
+      padding-bottom: calc(50% - 20px);
+    }
+  
+    footer {
+      padding: 50px 30px 10px;
+    }
+  }
+  
+  /* Styles for screens between 768px and 1023px (e.g., tablets) */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .logo {
+      margin: 20px;
+    }
+  
+    .nav-links {
+      margin: 20px;
+    }
+  
+    .middle-section {
+      justify-content: center;
+    }
+  
+    .box {
+      width: calc(50% - 20px);
+      padding-bottom: calc(50% - 20px);
+    }
+  }
+  
+  /* Styles for screens larger than 1023px (e.g., laptops and desktops) */
+  @media (min-width: 1024px) {
+    .middle-section {
+      justify-content: space-between;
+    }
+  
+    .box {
+      width: calc(33.33% - 20px);
+      padding-bottom: calc(33.33% - 20px);
+    }
+  }

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEN - Resources</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+
+<body>
+    {% include 'nav.html' %}
+
+    <div class="middle-section">
+        <div class="box">
+            <div class="c">
+                <h2>Coding</h2>
+            <p>"Coding is the art of turning ideas into reality, one line at a time."</p>
+            <p>Embark on an exciting journey of learning and exploration in the world of coding. Click here to unlock
+                the doors to creativity and endless possibilities.</p>
+            </div>
+
+            <a href="coding.html"><button class="custom-button">Click Me</button></a>
+        </div>
+        <div class="box">
+            <div class="c">
+                <h2>Web Development</h2>
+            <p>Web development is the art of building and maintaining websites, encompassing both front-end design and
+                back-end functionality. It merges creativity with technical expertise to shape the digital experiences
+                of the modern world.</p>
+            </div>
+            <a href="web.html"><button class="custom-button">Click Me</button></a>
+        </div>
+        <div class="box">
+            <div class="c">
+                <h2>Maths</h2>
+            <p>"In a world full of mysteries, mathematics is the compass that guides us to understanding."</p>
+            <!-- <p>Unveil the mesmerizing world of mathematics with just one click, where beauty and brilliance intertwine
+                to reveal the elegance of logical wonders.</p> -->
+            </div>
+            <a href="maths.html"><button class="custom-button">Click Me</button></a>
+        </div>
+        <div class="box">
+            <div class="c">
+                <h2>Resources</h2>
+            <p>Unlock your coding potential with carefully curated free resources. Embrace interactive platforms and
+                engaging tutorials to elevate your coding skills.</p>
+            </div>
+            <a href="resource.html"><button class="custom-button">Click Me</button></a>
+        </div>
+        <div class="box">
+            <div class="c">
+                <h2>Road-Map</h2>
+            <p>A roadmap is like a compass that leads us through the vast landscape of possibilities. With its
+                well-structured guidance and clear milestones, it empowers us to navigate challenges, stay focused on
+                our objectives, and ultimately reach our destination with confidence and purpose.</p>
+            </div>
+            <a href="road.html"><button class="custom-button">Click Me</button></a>
+        </div>
+        <div class="box">
+            <div class="c">
+                <h2>Communities</h2>
+            <p>Connect with like-minded individuals possessing similar skills, fostering a supportive community of
+                shared knowledge and mutual growth. Together, we can inspire, learn, and achieve greater heights in our
+                respective domains.</p>
+            </div>
+            <a href="commu.html"><button class="custom-button">Click Me</button></a>
+        </div>
+    </div>
+
+    
+    {% include 'footer.html' %}
+</body>
+
+</html>
